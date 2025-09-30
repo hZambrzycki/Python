@@ -1,10 +1,65 @@
-# Python
-Python Projects
+# Python Projects (CLI, Packages & Notebooks)
 
-This repository is divided into three sections:
+---
 
-Calculator Python is a basic calculator made in Python.
+A small collection of **Python learning projects**:
+- **Calculator** – a simple calculator (turn it into a CLI).
+- **Messages** – package/import examples.
+- **Udemy Notebooks** – Jupyter notebooks from a Python course.
 
-Messages is a program to see how packages work in Python.
+> Goal: show clean structure, reproducible envs, and a tiny test suite.
 
-And the last section, Python Udemy Course, is a compilation of everything studied in a Udemy course about Python in Jupyter files.
+---
+
+##  Project structure
+```
+.
+├─ calculator/ # Calculator app (turn into CLI)
+│ ├─ calculator.py
+│ └─ tests/
+├─ messages/ # Import/package demo
+│ ├─ init.py
+│ └─ example.py
+├─ notebooks/ # Jupyter notebooks (formerly "Python Udemy Course")
+│ └─ *.ipynb
+├─ pyproject.toml # (optional) build system & tools
+├─ requirements.txt # runtime/dev deps
+└─ README.md
+```
+
+---
+
+## Getting started
+
+```bash
+# Create and activate a virtual env (uv or venv)
+python -m venv .venv && source .venv/bin/activate
+pip install -U pip
+pip install -r requirements.txt
+```
+
+## Run the calculator
+```
+python -m calculator.calculator  # or: python calculator/calculator.py
+```
+## Open notebooks
+```
+pip install jupyter
+jupyter lab
+
+```
+
+##  Tests & Quality
+```
+pip install -r requirements.txt  # includes pytest/ruff/black if you keep them here
+pytest -q
+ruff check .
+black --check .
+```
+# Tech
+
+Python 3.11+ recommended
+
+Jupyter Notebooks for exploration
+
+pytest, ruff, black (optional)
